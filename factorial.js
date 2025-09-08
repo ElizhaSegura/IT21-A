@@ -17,10 +17,23 @@ rl.question("Enter your choice (1-3): ", choice =>{
 
     if(choice==="1"){
         console.log("Hello There!");
+        backToMenu();
     } else if (choice==="2"){
         console.log("Factorial\n");
+        computeFactorial();
 
-         rl.question("Enter a number for factorial: ", (numStr) =>{
+    } else if(choice==="3"){
+         console.log("Existing program...Goodbye!");
+         rl.close();
+    } else{
+        console.log("Invalid choice. Please Try Again.");
+        mainMenu();
+    }
+    
+    })
+}
+function computeFactorial(){
+    rl.question("Enter a number for factorial: ", (numStr) =>{
             let num = parseInt(numStr);
             
             if(isNaN(num)|| num<0){
@@ -35,15 +48,27 @@ rl.question("Enter your choice (1-3): ", choice =>{
 
                 console.log("The factorial of "+ num + " is "+ fact);
             }
+       
+        backToMenu();
+     });
+       
+}
 
-        });
+    function backToMenu(){
+     console.log("--------");
+    console.log("1. Back to menu");
+    console.log("2. Exit");
 
-    }else if(choice==="3"){
+    rl.question("What would you like to do next? (1-2): ", (backToMenuChoice) =>{
+        if(backToMenuChoice ==="1"){
+            console.clear();
+            mainMenu();
+        } else if (backToMenuChoice === "2"){
          console.log("Existing program...Goodbye!");
          rl.close();
-    }else{
+    } else {
         console.log("Invalid choice. Please Try Again.");
-        mainMenu();
+       backToMenu();
     }
     
     })
