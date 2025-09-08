@@ -5,8 +5,8 @@ const rl = readline.createInterface({
     output:process.stdout
 })
 
-
-    console.log("Factorial Application\n");
+function mainMenu(){
+console.log("Factorial Application\n");
 
 console.log("1. Say Hello");
 console.log("2. Compute Factorial");
@@ -18,11 +18,10 @@ rl.question("Enter your choice (1-3): ", choice =>{
         console.log("Hello There!");
     } else if (choice==="2"){
         console.log("Factorial\n");
-        
-        rl.question("Enter a number for factorial: ", (numStr) =>{
+                rl.question("Enter a number for factorial: ", (numStr) =>{
             let num = parseInt(numStr);
             
-            if(isNaN(num) || num<0){
+            if(isNaN(num)|| num<0){
                 console.log("Please enter a non-negative integer.");
             } else {
                 
@@ -31,17 +30,18 @@ rl.question("Enter your choice (1-3): ", choice =>{
                 for (let i = 1; i <= num ; i++){
                     fact *=i;
                 }
+
                 console.log("The factorial of "+ num + " is "+ fact);
             }
 
         });
 
-    } else if(choice==="3"){
-         console.log("Exit");
+    }else if(choice==="3"){
          console.log("Existing program...Goodbye!");
          rl.close();
-    } else{
+    }else{
         console.log("Invalid choice. Please Try Again.");
     }
     
-})
+    })
+}
