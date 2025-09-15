@@ -21,6 +21,20 @@ class Wizard extends Hero {
 
 //console.log(hero.getHealth());
 
+class Witch extends Hero{
+    constructor(name,health,attack,mana){
+        super(name,health,attack);
+        this.mana = mana;
+}
+  
+    useAbility(){
+        console.log(`${this.name} roars Eeeemeraaaald VooOooorrrtex!!!`);
+    }
+}
+
 const wizard = new Wizard("Grand Magus", 100, 10);
 wizard.useAbility();
+
+const witch = new Witch("Elphaba", 80, 8, 50);
+witch.useAbility();
 
