@@ -12,11 +12,11 @@ class Hero {
         return this.#health;
     }
 
-    getName(){
+    getName() {
         console.log(this.name);
     }
 
-    getAttack(){
+    getAttack() {
         console.log(this.attack);
     }
 
@@ -27,13 +27,13 @@ class Hero {
         console.log("Attack: " + this.attack);
     }
 
-    addItem(item){
+    addItem(item) {
         this.items.push(item);
-   }
+    }
 
-   totalAttack(){
-    return this.attack +this.items.reduce((sum, i) =>sum+i.bonusAttack,0);
-   }
+    totalAttack() {
+        return this.attack + this.items.reduce((sum, i) => sum + i.bonusAttack, 0);
+    }
 
 }
 // const hero = new Hero("Thorin", 100, 10);
@@ -57,8 +57,8 @@ class Witch extends Hero {
     }
 }
 
-class Item{
-    constructor(name, bonusAttack){
+class Item {
+    constructor(name, bonusAttack) {
         this.name = name;
         this.bonusAttack = bonusAttack;
     }
